@@ -1,0 +1,16 @@
+<template name="navigation">
+  <div class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <ul class="nav navbar-nav navbar-left">
+        <li>{{> loginButtons}}</li>
+        <li ><a href="{{pathFor 'home'}}">Home</a></li>
+        <li ><a href="{{pathFor 'about'}}">About</a></li>
+        {{#if currentUser}}
+        <li ><a href="{{pathFor 'allbooks'}}">All Books</a></li>
+        <li ><a href="{{pathFor 'mybooks'}}" >My Books</a></li>
+        <li ><a href="{{pathFor 'myaccount'}}" >My Account</a></li>
+        {{/if}}
+      </ul>
+  </div>
+</div>
+</template>
