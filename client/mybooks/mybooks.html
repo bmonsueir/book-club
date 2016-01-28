@@ -1,4 +1,18 @@
 <template name = "mybooks">
 
 <h1>My Books</h1>
+
+<ul>
+    {{#with books}}
+        {{#each books}}
+          <li class = 'li-list'> <img src = "{{picture}}"/> {{title}} by  {{author}} about {{genre}} </li>
+        {{/each}}
+    {{/with}}
+</ul>
+<div class = "row">
+    <button class = 'addBook'>Add Book</button>
+    <label>Book Title</label>
+          <input type="text"  name= 'title' id = "findIt" placeholder="Enter your book's title">
+</div>
+
 </template>

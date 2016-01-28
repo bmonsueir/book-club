@@ -1,3 +1,12 @@
 <template name = "allbooks">
     <h1>Browse Books</h1>
+    <div>
+        {{#with books}}
+            {{#each books}}
+              <div class = 'allBooks row'><button data-toggle="tooltip" title="{{author}}"> <img class = "mediumPicture" id = "{{@index}}" src = "{{picture}}"/></button>{{title}}</div>
+            {{/each}}
+        {{/with}}
+    </div>
+
+
 </template>
