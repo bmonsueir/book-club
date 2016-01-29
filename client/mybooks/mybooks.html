@@ -5,7 +5,9 @@
 <ul>
     {{#with books}}
         {{#each books}}
-          <li class = 'li-list'> <img src = "{{picture}}"/> {{title}} by  {{author}} about {{genre}} </li>
+          <li class = 'li-list'>  <img src = "{{picture}}"/>
+              {{title}} by  {{author}} {{#if requestor}} requested by <button id = "{{@index}}"  class = "accept" data-toggle="tooltip" title="Accept Trade"> {{requestor}}</button> {{/if}}
+              {{#if image}} for <img src ="{{requestorImage}}"/>{{/if}}</li>
         {{/each}}
     {{/with}}
 </ul>
@@ -14,5 +16,14 @@
     <label>Book Title</label>
           <input type="text"  name= 'title' id = "findIt" placeholder="Enter your book's title">
 </div>
+<h3>Requested Books</h3>
+<ul>
+    {{#with requested}}
+        {{#each requested}}
+          <li class = 'li-list'> <img src = "{{image}}"/> {{title}} Requested from {{requestor}}
+              {{#if accepted}} TRADE ACCEPTED {{/if}} </li>
+        {{/each}}
+    {{/with}}
+</ul>
 
 </template>

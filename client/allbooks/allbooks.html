@@ -3,7 +3,7 @@
     <div>
         {{#with books}}
             {{#each books}}
-              <div class = 'allBooks row'><button data-toggle="tooltip" title="{{author}}"> <img class = "mediumPicture" id = "{{@index}}" src = "{{picture}}"/></button>{{title}}</div>
+              <div class = 'allBooks row'><button id = "{{@index}}" class = "selectBook" data-toggle="tooltip" title="{{author}}"> <img class = "mediumPicture"  src = "{{picture}}"/></button>{{title}}</div>
             {{/each}}
         {{/with}}
     </div>

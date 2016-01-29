@@ -1,3 +1,16 @@
 <template name = "myaccount">
     <h1>My Account Information</h1>
+    <h4>Fill in boxes to change your information</h4>
+<form>
+  First name: {{first}}<br>
+  <input type="text" name="firstname"><br>
+  Last name: {{last}}<br>
+  <input type="text" name="lastname"><br>
+  City: {{city}}<br>
+  <input type="text" name="city"><br>
+  State: {{state}}<br>
+  <input type="text" name="state"><br>
+  <input type="submit" value="Submit">
+</form>
+{{datum}}
 </template>
