@@ -8,7 +8,7 @@ books: function(){
     for(var i in book){
         if(book[i].createdBy == user){
         title.push({ title: book[i].title,
-                    picture: "http://covers.openlibrary.org/w/id/" + book[i].bookurl + "-S.jpg",
+                    picture: "https://covers.openlibrary.org/w/id/" + book[i].bookurl + "-S.jpg",
                     author: book[i].author,
                     genre: book[i].genre,
                     requestor: book[i].requestor,
@@ -28,7 +28,7 @@ Template.mybooks.events({
 "input #findIt": function(event){
     var title = $('[name=title]').val();
     var titles = [];
-    $.getJSON("http://openlibrary.org/search.json?title=" + title, function(result){
+    $.getJSON("https://openlibrary.org/search.json?title=" + title, function(result){
         for(var i in result.docs){
             titles.push(result.docs[i].title);
         }
@@ -50,7 +50,7 @@ Template.mybooks.events({
     var user = Meteor.userId();
     var username = Meteor.user().username;
     var title = $('[name=title]').val();
-$.getJSON("http://openlibrary.org/search.json?title=" + title, function(result){
+$.getJSON("https://openlibrary.org/search.json?title=" + title, function(result){
 
     Books.insert({
            createdBy: user,
@@ -75,7 +75,7 @@ requested: function(){
         //console.log(username, book[i].username);
         if(book[i].requestor == username){
         title.push({ title: book[i].title,
-                    image: "http://covers.openlibrary.org/w/id/" + book[i].bookurl + "-S.jpg",
+                    image: "https://covers.openlibrary.org/w/id/" + book[i].bookurl + "-S.jpg",
                     requestor: book[i].username,
                     accepted: book[i].accepted
                 });
